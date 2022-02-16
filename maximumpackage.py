@@ -22,7 +22,39 @@ def solution(N, K1, K2, W, V):
 """
 
 
+def greedy(N, bag_capa, W, V):
+    tot_value, value_idx, idx_con = [], [], 0
+    for i in range(N):
+        tot_w, tot_v, tot_i = bag_capa, 0, []
+        for idx, (weight, value) in enumerate(zip(W[i:], V[i:])):
+            if tot_w >= weight:
+                tot_w -= weight
+                tot_v += value
+                tot_i.append(idx + idx_con)
+            else:
+                pass
+        idx_con += 1
+        tot_value.append(tot_v)
+        value_idx.append(tot_i)
+    return max(tot_value), value_idx[tot_value.index(max(tot_value))]
 
 
+def solution(N, K1, K2, W, V):
+    if K1 - K2 >= 0:
+        k1_val, del_idx = greedy(N, K1, W, V)
+        for idx in sorted(del_idx, reverse=True):
+            del W[idx]
+            del V[idx]
+        k2_val, _ = greedy(len(W), K2, W, V)
+        answer = k1_val + k2_val
+        return answer
+    else:
+        k2_val, del_idx = greedy(N, K2, W, V)
+        for idx in sorted(del_idx, reverse=True):
+            del W[idx]
+            del V[idx]
+        k1_val, _ = greedy(len(W), K1, W, V)
+        answer = k2_val + k1_val
+        return answer
 
 
