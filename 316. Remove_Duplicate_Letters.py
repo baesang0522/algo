@@ -21,6 +21,7 @@ s consists of lowercase English letters.
 Note: This question is the same as 1081: https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
 """
 from collections import Counter
+# from itertools import product
 
 
 class Solution:
