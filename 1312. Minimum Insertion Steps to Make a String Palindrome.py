@@ -26,8 +26,12 @@ Constraints:
 1 <= s.length <= 500
 s consists of lowercase English letters.
 """
+from functools import lru_cache
+
+
 class Solution:
     def minInsertions(self, s: str) -> int:
+        @lru_cache(None)
         def check_palindrome(i, j):
             if i >= j:
                 return 0
