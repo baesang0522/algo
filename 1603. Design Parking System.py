@@ -44,12 +44,6 @@ class ParkingSystem:
             return True
         return False
 
-ps = ParkingSystem(1, 1, 0)
-ps.addCar(1)
-ps.addCar(1)
-# Your ParkingSystem object will be instantiated and called as such:
-# obj = ParkingSystem(big, medium, small)
-# param_1 = obj.addCar(carType)
 
 
 
