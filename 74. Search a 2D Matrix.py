@@ -65,29 +65,6 @@ s = Solution()
 ss = s.searchMatrix(matrix=matrix, target=target)
 
 
-#
-# fst_m = [row[0] for row in matrix]
-# def two_pointer(target_list, target):
-#     low, high = 0, len(target_list) - 1
-#     mid = (low + high) // 2
-#
-#     while low < high:
-#         if target_list[mid] == target:
-#             return "Find"
-#         elif target_list[mid] < target:
-#             low = mid + 1
-#         else:
-#             high = mid - 1
-#     return low
-#
-# def binary_search(target_list, target):
-#     mid = tar
-#
-#
-#
-# ss = two_pointer(matrix, target)
-
-
 
 
 
